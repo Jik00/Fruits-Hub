@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:fruits_hub/features/splash/presentation/views/splash_view.dart';
 
 Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
@@ -8,6 +9,13 @@ Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
         builder: (_) => const SplashView(),
         settings: settings,
       );
+    
+    case OnboardingView.routeName:
+      return MaterialPageRoute(
+        builder: (_) => const OnboardingView(),
+        settings: settings,
+      );
+
     default:
       return null;
   }
