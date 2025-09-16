@@ -5,7 +5,6 @@ import 'package:fruits_hub/core/utils/app_images.dart';
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
-  
 
   @override
   State<SplashViewBody> createState() => _SplashViewBodyState();
@@ -20,7 +19,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, 'OnboardingView');
     });
-    // TODO: implement initState
+    
     super.initState();
   }
   @override
