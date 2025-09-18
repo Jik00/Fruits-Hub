@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: 'SplashView',
       
       // flutter localization
-       locale: const Locale('en'),
+      locale: const Locale('ar'),
       localizationsDelegates: const [
                 S.delegate,
                 GlobalMaterialLocalizations.delegate,

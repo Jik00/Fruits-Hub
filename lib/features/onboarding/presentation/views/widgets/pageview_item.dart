@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fruits_hub/constants.dart';
+import 'package:fruits_hub/core/utils/context_extensions.dart';
 
 class PageviewItem extends StatelessWidget {
   const PageviewItem(
@@ -24,16 +25,25 @@ class PageviewItem extends StatelessWidget {
           child: Stack(
             // alignment: Alignment.center,
             children: [
-              Positioned.fill(child: SvgPicture.asset(backgroundImg, fit: BoxFit.fill)),
+              Positioned.fill(
+                  child: SvgPicture.asset(backgroundImg, fit: BoxFit.fill)),
               Positioned(
                 bottom: 0,
                 right: 0,
                 left: 0,
-                child: SvgPicture.asset(img),),
-              const Positioned(
-                top: 39,
-                left: 333,
-                child: Text(kOnboardingSkip, style: TextStyle(fontSize: 13, color: kgrayscale400, )  )),
+                child: SvgPicture.asset(img),
+              ),
+              Positioned(
+                  top: 39,
+                  //left: 333,
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.only(start: 8),
+                    child: Text(context.loc.onboardingSkip,
+                        style: const TextStyle(
+                          fontSize: 13,
+                          color: kgrayscale400,
+                        )),
+                  )),
             ],
           ),
         ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
-import 'package:fruits_hub/constants.dart';
+import 'package:fruits_hub/core/utils/context_extensions.dart';
 import 'package:fruits_hub/features/onboarding/presentation/views/widgets/pageview_item.dart';
 
 class OnboardingPgview extends StatelessWidget {
@@ -9,16 +9,16 @@ class OnboardingPgview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView(
-      children: const [
+      children: [
         PageviewItem(
           img: Assets.assetsImagesPgviewItem1Img,
           backgroundImg: Assets.assetsImagesPgviewItem1Backimg,
-          subtitle: kOnboardingSubTitleItem1,
+          subtitle: context.loc.onboardingSubTitleItem1,
           title: Row(
             children: [
-              Text(kOnboardingTitleItem1Part1),
-              Text(kOnboardingTitleItem1Part2),
-              Text(kOnboardingTitleItem1Part3),
+              Text(context.loc.onboardingTitleItem1Part1),
+              Text(context.loc.onboardingTitleItem1Part2),
+              Text(context.loc.onboardingTitleItem1Part3),
             ],
           ),
         ),
