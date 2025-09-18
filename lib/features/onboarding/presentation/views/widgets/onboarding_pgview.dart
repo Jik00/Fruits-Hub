@@ -15,11 +15,21 @@ class OnboardingPgview extends StatelessWidget {
           backgroundImg: Assets.assetsImagesPgviewItem1Backimg,
           subtitle: context.loc.onboardingSubTitleItem1,
           title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(context.loc.onboardingTitleItem1Part1),
               Text(context.loc.onboardingTitleItem1Part2),
               Text(context.loc.onboardingTitleItem1Part3),
             ],
+          ),
+        ),
+        PageviewItem(
+          img: Assets.assetsImagesPgviewItem2Img,
+          backgroundImg: Assets.assetsImagesPgviewItem2Backimg,
+          subtitle: context.loc.onboardingSubTitleItem2,
+          title: Text(
+            context.loc.onboardingTitleItem2,
+            textAlign: TextAlign.center,
           ),
         ),
       ],

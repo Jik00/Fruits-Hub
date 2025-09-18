@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fruits_hub/constants.dart';
@@ -21,9 +22,8 @@ class PageviewItem extends StatelessWidget {
       children: [
         SizedBox(
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.55,
+          height: 0.55.sh,
           child: Stack(
-            // alignment: Alignment.center,
             children: [
               Positioned.fill(
                   child: SvgPicture.asset(backgroundImg, fit: BoxFit.fill)),
@@ -34,18 +34,28 @@ class PageviewItem extends StatelessWidget {
                 child: SvgPicture.asset(img),
               ),
               Positioned(
-                  top: 39,
-                  //left: 333,
+                  top: 39.h,
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.only(start: 8),
+                    padding: EdgeInsetsDirectional.only(start: 16.w),
                     child: Text(context.loc.onboardingSkip,
-                        style: const TextStyle(
-                          fontSize: 13,
+                        style: TextStyle(
+                          fontSize: 13.sp,
                           color: kgrayscale400,
                         )),
                   )),
             ],
           ),
+        ),
+        SizedBox(
+          height: 64.h,
+        ),
+        title,
+        SizedBox(
+          height: 24.h,
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: Text(subtitle, textAlign: TextAlign.center),
         ),
       ],
     );
