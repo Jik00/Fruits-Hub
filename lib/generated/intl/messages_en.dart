@@ -26,10 +26,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingSubTitleItem1": MessageLookupByLibrary.simpleMessage(
       "Discover a unique shopping experience with FruitHUB. Explore our wide collection of premium fresh fruits and enjoy the best deals with top quality.",
     ),
+    "onboardingSubTitleItem2": MessageLookupByLibrary.simpleMessage(
+      "We bring you the best handpicked fruits. Check out details, images, and reviews to ensure you pick the perfect fruit",
+    ),
     "onboardingTitleItem1Part1": MessageLookupByLibrary.simpleMessage(
       "Welcome to",
     ),
     "onboardingTitleItem1Part2": MessageLookupByLibrary.simpleMessage("Fruit"),
     "onboardingTitleItem1Part3": MessageLookupByLibrary.simpleMessage("HUB"),
+    "onboardingTitleItem2": MessageLookupByLibrary.simpleMessage(
+      "Search & Shop",
+    ),
   };
 }

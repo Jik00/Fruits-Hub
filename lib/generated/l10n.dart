@@ -99,6 +99,26 @@ class S {
   String get onboardingSkip {
     return Intl.message('Skip', name: 'onboardingSkip', desc: '', args: []);
   }
+
+  /// `We bring you the best handpicked fruits. Check out details, images, and reviews to ensure you pick the perfect fruit`
+  String get onboardingSubTitleItem2 {
+    return Intl.message(
+      'We bring you the best handpicked fruits. Check out details, images, and reviews to ensure you pick the perfect fruit',
+      name: 'onboardingSubTitleItem2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search & Shop`
+  String get onboardingTitleItem2 {
+    return Intl.message(
+      'Search & Shop',
+      name: 'onboardingTitleItem2',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
