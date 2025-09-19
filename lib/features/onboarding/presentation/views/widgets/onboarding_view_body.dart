@@ -43,7 +43,8 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
     return Column(
       children: [
         Expanded(
-            child: OnboardingPgview( pageController: pageController,
+            child: OnboardingPgview(
+          pageController: pageController,
           currentPg: currentPg,
         )),
         SmoothPageIndicator(
@@ -60,9 +61,15 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
         SizedBox(
           height: 29.h,
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: CustomButton(hint: context.loc.startNowButton, onTap: () {}),
+        Visibility(
+          visible: currentPg == 1,
+          maintainSize: true,
+          maintainAnimation: true,
+          maintainState: true,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: CustomButton(hint: context.loc.startNowButton, onTap: () {}),
+          ),
         ),
         SizedBox(
           height: 43.h,
