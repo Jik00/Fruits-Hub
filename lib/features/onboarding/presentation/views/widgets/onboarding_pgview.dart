@@ -4,16 +4,17 @@ import 'package:fruits_hub/core/utils/context_extensions.dart';
 import 'package:fruits_hub/features/onboarding/presentation/views/widgets/pageview_item.dart';
 
 class OnboardingPgview extends StatelessWidget {
-  const OnboardingPgview({super.key, required this.pageController});
+  const OnboardingPgview({super.key, required this.currentPg});
 
-  final PageController pageController;
+  final int currentPg;
+
 
   @override
   Widget build(BuildContext context) {
     return PageView(
-      controller: pageController,
       children: [
         PageviewItem(
+          isLast: currentPg == 1,
           img: Assets.assetsImagesPgviewItem1Img,
           backgroundImg: Assets.assetsImagesPgviewItem1Backimg,
           subtitle: context.loc.onboardingSubTitleItem1,
@@ -27,6 +28,7 @@ class OnboardingPgview extends StatelessWidget {
           ),
         ),
         PageviewItem(
+          isLast: currentPg == 1,
           img: Assets.assetsImagesPgviewItem2Img,
           backgroundImg: Assets.assetsImagesPgviewItem2Backimg,
           subtitle: context.loc.onboardingSubTitleItem2,

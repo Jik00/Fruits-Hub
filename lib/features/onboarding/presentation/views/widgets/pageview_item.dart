@@ -11,10 +11,12 @@ class PageviewItem extends StatelessWidget {
       required this.img,
       required this.backgroundImg,
       required this.subtitle,
-      required this.title});
+      required this.title,
+      required this.isLast});
 
   final String img, backgroundImg, subtitle;
   final Widget title;
+  final bool isLast;
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +39,15 @@ class PageviewItem extends StatelessWidget {
                   top: 39.h,
                   child: Padding(
                     padding: EdgeInsetsDirectional.only(start: 16.w),
-                    child: Text(context.loc.onboardingSkip,
-                        style: TextStyle(
-                          fontSize: 13.sp,
-                          color: AppColors.grayscale400,
-                        )),
+                    child: Visibility(
+                      visible: !isLast,
+                      child: Text(context.loc.onboardingSkip,
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            fontSize: 14.sp,
+                            color: AppColors.grayscale400,
+                          )),
+                    ),
                   )),
             ],
           ),

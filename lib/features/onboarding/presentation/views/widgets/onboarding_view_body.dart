@@ -20,14 +20,15 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
 
   @override
   void initState() {
+    super.initState();
+
     // initialize controller
-    pageController = PageController();
+    pageController = PageController( initialPage: 0);
     pageController.addListener(() {
       setState(() {
         currentPg = pageController.page!.round();
       });
     });
-    super.initState();
   }
 
   @override
@@ -41,7 +42,7 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Expanded(child: OnboardingPgview(pageController: pageController)),
+        Expanded(child: OnboardingPgview( currentPg: currentPg,)),
         DotsIndicator(
           dotsCount: 2,
           position: 0,
