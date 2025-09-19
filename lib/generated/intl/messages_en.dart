@@ -37,5 +37,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingTitleItem2": MessageLookupByLibrary.simpleMessage(
       "Search & Shop",
     ),
+    "startNowButton": MessageLookupByLibrary.simpleMessage("Start Now"),
   };
 }

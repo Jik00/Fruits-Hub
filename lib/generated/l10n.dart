@@ -119,6 +119,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Start Now`
+  String get startNowButton {
+    return Intl.message(
+      'Start Now',
+      name: 'startNowButton',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

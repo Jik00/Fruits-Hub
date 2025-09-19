@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fruits_hub/constants.dart';
+import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/context_extensions.dart';
 
 class PageviewItem extends StatelessWidget {
@@ -40,7 +40,7 @@ class PageviewItem extends StatelessWidget {
                     child: Text(context.loc.onboardingSkip,
                         style: TextStyle(
                           fontSize: 13.sp,
-                          color: kgrayscale400,
+                          color: AppColors.grayscale400,
                         )),
                   )),
             ],
