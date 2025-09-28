@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
+import 'package:fruits_hub/features/onboarding/presentation/views/onboarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -14,7 +15,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   void initState() {
     //future builder // lw fe complicated logic, do seperate method
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, 'OnboardingView');
+      Navigator.pushReplacementNamed(context, OnboardingView.routeName);
     });
 
     super.initState();

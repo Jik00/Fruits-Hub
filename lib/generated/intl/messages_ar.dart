@@ -24,7 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "onboardingSkip": MessageLookupByLibrary.simpleMessage("تخط"),
     "onboardingSubTitleItem1": MessageLookupByLibrary.simpleMessage(
-      "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.",
+      "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة.",
     ),
     "onboardingSubTitleItem2": MessageLookupByLibrary.simpleMessage(
       "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية",
@@ -32,8 +32,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingTitleItem1Part1": MessageLookupByLibrary.simpleMessage(
       "مرحبًا بك في",
     ),
-    "onboardingTitleItem1Part2": MessageLookupByLibrary.simpleMessage("Fruit"),
-    "onboardingTitleItem1Part3": MessageLookupByLibrary.simpleMessage("HUB"),
+    "onboardingTitleItem1Part2": MessageLookupByLibrary.simpleMessage(" HUB"),
+    "onboardingTitleItem1Part3": MessageLookupByLibrary.simpleMessage("Fruit"),
     "onboardingTitleItem2": MessageLookupByLibrary.simpleMessage("ابحث و تسوق"),
     "startNowButton": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
   };

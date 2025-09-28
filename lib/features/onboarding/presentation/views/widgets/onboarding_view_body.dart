@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/context_extensions.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
+import 'package:fruits_hub/features/auth/presentation/views/login_view.dart';
 import 'package:fruits_hub/features/onboarding/presentation/views/widgets/onboarding_pgview.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -68,7 +69,10 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
           maintainState: true,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: CustomButton(hint: context.loc.startNowButton, onTap: () {}),
+            child: CustomButton(
+                hint: context.loc.startNowButton,
+                onTap: () => Navigator.pushReplacementNamed(
+                    context, LoginView.routeName)),
           ),
         ),
         SizedBox(

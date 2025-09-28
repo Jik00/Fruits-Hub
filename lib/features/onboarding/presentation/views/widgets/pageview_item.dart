@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/context_extensions.dart';
+import 'package:fruits_hub/features/auth/presentation/views/login_view.dart';
 
 class PageviewItem extends StatelessWidget {
   const PageviewItem(
@@ -24,7 +25,7 @@ class PageviewItem extends StatelessWidget {
       children: [
         SizedBox(
           width: double.infinity,
-          height: 0.55.sh,
+          height: 0.52.sh,
           child: Stack(
             children: [
               Positioned.fill(
@@ -41,12 +42,16 @@ class PageviewItem extends StatelessWidget {
                     padding: EdgeInsetsDirectional.only(start: 16.w),
                     child: Visibility(
                       visible: isVisible,
-                      child: Text(context.loc.onboardingSkip,
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            fontSize: 14.sp,
-                            color: AppColors.grayscale400,
-                          )),
+                      child: GestureDetector(
+                        onTap: () => Navigator.pushReplacementNamed(
+                            context, LoginView.routeName),
+                        child: Text(context.loc.onboardingSkip,
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontSize: 14.sp,
+                              color: AppColors.grayscale400,
+                            )),
+                      ),
                     ),
                   )),
             ],
@@ -61,7 +66,14 @@ class PageviewItem extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: Text(subtitle, textAlign: TextAlign.center),
+          child: Text(
+            subtitle,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w600,
+                color: AppColors.textColor),
+          ),
         ),
       ],
     );

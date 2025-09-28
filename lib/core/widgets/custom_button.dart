@@ -22,6 +22,7 @@ class CustomButton extends StatelessWidget {
       child: Text(
         hint,
         style: TextStyle(
+          fontWeight: FontWeight.w700,
           fontSize: 16.sp,
           color: Colors.white,
         ),
