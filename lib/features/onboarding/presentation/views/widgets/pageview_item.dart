@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fruits_hub/constants.dart';
+import 'package:fruits_hub/core/services/shared_preferences_singleton.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/context_extensions.dart';
 import 'package:fruits_hub/features/auth/presentation/views/login_view.dart';
@@ -43,8 +45,11 @@ class PageviewItem extends StatelessWidget {
                     child: Visibility(
                       visible: isVisible,
                       child: GestureDetector(
-                        onTap: () => Navigator.pushReplacementNamed(
-                            context, LoginView.routeName),
+                        onTap: () {
+                          Prefs.setBool(kIsOnboardingSeen, true);
+                          Navigator.pushReplacementNamed(
+                              context, LoginView.routeName);
+                        },
                         child: Text(context.loc.onboardingSkip,
                             style: TextStyle(
                               decoration: TextDecoration.underline,

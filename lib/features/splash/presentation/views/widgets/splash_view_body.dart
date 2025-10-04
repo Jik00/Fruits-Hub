@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruits_hub/constants.dart';
+import 'package:fruits_hub/core/services/shared_preferences_singleton.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
+import 'package:fruits_hub/features/auth/presentation/views/login_view.dart';
 import 'package:fruits_hub/features/onboarding/presentation/views/onboarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -13,14 +16,10 @@ class SplashViewBody extends StatefulWidget {
 class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   void initState() {
-    //future builder // lw fe complicated logic, do seperate method
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, OnboardingView.routeName);
-    });
-
     super.initState();
+    initNavigation();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -38,6 +37,20 @@ class _SplashViewBodyState extends State<SplashViewBody> {
           SvgPicture.asset(Assets.assetsImagesSplash3, fit: BoxFit.fill),
         ],
       ),
+    );
+  }
+
+  void initNavigation() {
+    bool isOnboardingSeen = Prefs.getBool(kIsOnboardingSeen);
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        if (isOnboardingSeen) {
+          Navigator.pushReplacementNamed(context, LoginView.routeName);
+        } else {
+          Navigator.pushReplacementNamed(context, OnboardingView.routeName);
+        }
+      },
     );
   }
 }

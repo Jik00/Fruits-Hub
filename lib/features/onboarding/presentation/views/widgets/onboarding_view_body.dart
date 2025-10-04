@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruits_hub/constants.dart';
+import 'package:fruits_hub/core/services/shared_preferences_singleton.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/context_extensions.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
@@ -71,8 +73,10 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: CustomButton(
                 hint: context.loc.startNowButton,
-                onTap: () => Navigator.pushReplacementNamed(
-                    context, LoginView.routeName)),
+                onTap: () {
+                  Prefs.setBool(kIsOnboardingSeen, true);
+                  Navigator.pushReplacementNamed(context, LoginView.routeName);
+                }),
           ),
         ),
         SizedBox(
