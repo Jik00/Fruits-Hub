@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CustomAppbar extends StatelessWidget {
-  const CustomAppbar({super.key, required this.title});
-
-  final String title;
-
   @override
-  Widget build(BuildContext context) {
+  AppBar buildAppBar
+  (BuildContext context, {required String title}) {
     return AppBar(
       centerTitle: true,
       leading: GestureDetector(
@@ -18,5 +14,5 @@ class CustomAppbar extends StatelessWidget {
       title: Text(title,
           style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
     );
-  }
 }
+
