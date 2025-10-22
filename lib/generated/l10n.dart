@@ -134,6 +134,16 @@ class S {
   String get loginTitle {
     return Intl.message('login', name: 'loginTitle', desc: '', args: []);
   }
+
+  /// `E-mail`
+  String get email {
+    return Intl.message('E-mail', name: 'email', desc: '', args: []);
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message('Password', name: 'password', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

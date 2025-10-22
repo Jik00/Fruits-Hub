@@ -8,5 +8,7 @@
   "onboardingSubTitleItem2": "We bring you the best handpicked fruits. Check out details, images, and reviews to ensure you pick the perfect fruit",
   "onboardingTitleItem2": "Search & Shop",
   "startNowButton": "Start Now",
-      "loginTitle": "login"
+  "loginTitle": "login",
+  "email": "E-mail",
+  "password": "Password"
 }

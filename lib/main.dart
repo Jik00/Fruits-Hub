@@ -9,9 +9,8 @@ import 'package:fruits_hub/generated/l10n.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
-
-WidgetsFlutterBinding.ensureInitialized();
-await Prefs.init();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Prefs.init();
 
   runApp(const MyApp());
 }
@@ -29,7 +28,9 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           theme: ThemeData(
             textTheme: GoogleFonts.cairoTextTheme(),
-            colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
+            scaffoldBackgroundColor: Colors.white,
+            colorScheme:
+                ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
           ),
 
           debugShowCheckedModeBanner: false,

@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "loginTitle": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "onboardingSkip": MessageLookupByLibrary.simpleMessage("تخط"),
     "onboardingSubTitleItem1": MessageLookupByLibrary.simpleMessage(
@@ -36,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingTitleItem1Part2": MessageLookupByLibrary.simpleMessage(" HUB"),
     "onboardingTitleItem1Part3": MessageLookupByLibrary.simpleMessage("Fruit"),
     "onboardingTitleItem2": MessageLookupByLibrary.simpleMessage("ابحث و تسوق"),
+    "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "startNowButton": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
   };
 }
