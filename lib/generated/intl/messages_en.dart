@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingTitleItem2": MessageLookupByLibrary.simpleMessage(
       "Search & Shop",
     ),
+    "or": MessageLookupByLibrary.simpleMessage("OR"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "startNowButton": MessageLookupByLibrary.simpleMessage("Start Now"),

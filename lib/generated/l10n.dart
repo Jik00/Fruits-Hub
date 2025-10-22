@@ -175,6 +175,11 @@ class S {
     return Intl.message('Sign Up', name: 'signUp', desc: '', args: []);
   }
 
+  /// `OR`
+  String get or {
+    return Intl.message('OR', name: 'or', desc: '', args: []);
+  }
+
   // skipped getter for the 'login with Google' key
 
   // skipped getter for the 'login with Facebook' key

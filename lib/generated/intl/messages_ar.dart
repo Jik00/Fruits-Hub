@@ -42,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboardingTitleItem1Part2": MessageLookupByLibrary.simpleMessage(" HUB"),
     "onboardingTitleItem1Part3": MessageLookupByLibrary.simpleMessage("Fruit"),
     "onboardingTitleItem2": MessageLookupByLibrary.simpleMessage("ابحث و تسوق"),
+    "or": MessageLookupByLibrary.simpleMessage("أو"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "startNowButton": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
