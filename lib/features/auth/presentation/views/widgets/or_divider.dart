@@ -12,7 +12,7 @@ class OrDivider extends StatelessWidget {
       children: [
         const Expanded(
           child: Divider(
-            thickness: 3,
+            thickness: 1.5,
             color: AppColors.textFieldBorderColor,
           ),
         ),
@@ -28,7 +28,7 @@ class OrDivider extends StatelessWidget {
         ),
         const Expanded(
           child: Divider(
-            thickness: 3,
+            thickness: 1.5,
             color: AppColors.textFieldBorderColor,
           ),
         ),

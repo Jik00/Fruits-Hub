@@ -28,6 +28,15 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginTitle": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "loginWithApple": MessageLookupByLibrary.simpleMessage(
+      "تسجيل الدخول باستخدام أبل",
+    ),
+    "loginWithFacebook": MessageLookupByLibrary.simpleMessage(
+      "تسجيل الدخول باستخدام فيسبوك",
+    ),
+    "loginWithGoogle": MessageLookupByLibrary.simpleMessage(
+      "تسجيل الدخول باستخدام جوجل",
+    ),
     "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "onboardingSkip": MessageLookupByLibrary.simpleMessage("تخط"),
     "onboardingSubTitleItem1": MessageLookupByLibrary.simpleMessage(
