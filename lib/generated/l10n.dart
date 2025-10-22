@@ -144,6 +144,42 @@ class S {
   String get password {
     return Intl.message('Password', name: 'password', desc: '', args: []);
   }
+
+  /// `Forgot Password?`
+  String get forgotPassword {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'forgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get loginButton {
+    return Intl.message('Login', name: 'loginButton', desc: '', args: []);
+  }
+
+  /// `Don't have an account?`
+  String get noAccount {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'noAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get signUp {
+    return Intl.message('Sign Up', name: 'signUp', desc: '', args: []);
+  }
+
+  // skipped getter for the 'login with Google' key
+
+  // skipped getter for the 'login with Facebook' key
+
+  // skipped getter for the 'login with Apple' key
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

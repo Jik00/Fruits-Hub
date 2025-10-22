@@ -10,5 +10,12 @@
   "startNowButton": "Start Now",
   "loginTitle": "login",
   "email": "E-mail",
-  "password": "Password"
+  "password": "Password",
+  "forgotPassword": "Forgot Password?",
+  "loginButton": "Login",
+  "noAccount": "Don't have an account?",
+  "signUp": "Sign Up",
+  "login with Google": "Login with Google",
+  "login with Facebook": "Login with Facebook",
+  "login with Apple": "Login with Apple"
 }

@@ -23,7 +23,12 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "email": MessageLookupByLibrary.simpleMessage("E-mail"),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+    "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
     "loginTitle": MessageLookupByLibrary.simpleMessage("login"),
+    "noAccount": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account?",
+    ),
     "onboardingSkip": MessageLookupByLibrary.simpleMessage("Skip"),
     "onboardingSubTitleItem1": MessageLookupByLibrary.simpleMessage(
       "Discover a unique shopping experience with FruitHUB. Explore our wide collection of premium fresh fruits and enjoy the best deals with top quality.",
@@ -40,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Search & Shop",
     ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "startNowButton": MessageLookupByLibrary.simpleMessage("Start Now"),
   };
 }

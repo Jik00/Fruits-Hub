@@ -10,5 +10,12 @@
     "startNowButton": "ابدأ الآن",
     "loginTitle": "تسجيل الدخول",
     "email": "البريد الإلكتروني",
-    "password": "كلمة المرور"
+    "password": "كلمة المرور",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "loginButton": "تسجيل الدخول",
+    "noAccount": "ليس لديك حساب؟",
+    "signUp": "إنشاء حساب",
+    "login with Google": "تسجيل الدخول باستخدام جوجل",
+    "login with Facebook": "تسجيل الدخول باستخدام فيسبوك",
+    "login with Apple": "تسجيل الدخول باستخدام أبل"
 }
