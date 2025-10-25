@@ -18,5 +18,9 @@
     "or": "أو",
     "loginWithGoogle": "تسجيل الدخول باستخدام جوجل",
     "loginWithFacebook": "تسجيل الدخول باستخدام فيسبوك",
-    "loginWithApple": "تسجيل الدخول باستخدام أبل"
+    "loginWithApple": "تسجيل الدخول باستخدام أبل",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "haveAccount": "هل لديك حساب؟",
+    "makingAnAccount":" من خلال إنشاء حساب،",
+    "termsAndConditions": "فإنك توافق على الشروط والأحكام الخاصة بنا"
 }

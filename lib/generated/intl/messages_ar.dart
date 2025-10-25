@@ -22,10 +22,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "confirmPassword": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
     ),
+    "haveAccount": MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginTitle": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginWithApple": MessageLookupByLibrary.simpleMessage(
@@ -36,6 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "loginWithGoogle": MessageLookupByLibrary.simpleMessage(
       "تسجيل الدخول باستخدام جوجل",
+    ),
+    "makingAnAccount": MessageLookupByLibrary.simpleMessage(
+      " من خلال إنشاء حساب،",
     ),
     "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
     "onboardingSkip": MessageLookupByLibrary.simpleMessage("تخط"),
@@ -55,5 +62,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "startNowButton": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
+    "termsAndConditions": MessageLookupByLibrary.simpleMessage(
+      "فإنك توافق على الشروط والأحكام الخاصة بنا",
+    ),
   };
 }

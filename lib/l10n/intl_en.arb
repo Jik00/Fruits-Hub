@@ -18,5 +18,9 @@
   "or": "OR",
   "loginWithGoogle": "Login with Google",
   "loginWithFacebook": "Login with Facebook",
-  "loginWithApple": "Login with Apple"
+  "loginWithApple": "Login with Apple",
+  "confirmPassword": "Confirm Password",
+  "haveAccount": "Already have an account?",
+  "makingAnAccount":" By creating an account, ",
+  "termsAndConditions": "you agree to our Terms & Conditions"
 }
