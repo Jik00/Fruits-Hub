@@ -160,10 +160,10 @@ class S {
     return Intl.message('Login', name: 'loginButton', desc: '', args: []);
   }
 
-  /// `Don't have an account?`
+  /// `Don't have an account? `
   String get noAccount {
     return Intl.message(
-      'Don\'t have an account?',
+      'Don\'t have an account? ',
       name: 'noAccount',
       desc: '',
       args: [],
@@ -220,30 +220,35 @@ class S {
     );
   }
 
-  /// `Already have an account?`
+  /// `Full Name`
+  String get fullName {
+    return Intl.message('Full Name', name: 'fullName', desc: '', args: []);
+  }
+
+  /// `Already have an account? `
   String get haveAccount {
     return Intl.message(
-      'Already have an account?',
+      'Already have an account? ',
       name: 'haveAccount',
       desc: '',
       args: [],
     );
   }
 
-  /// ` By creating an account, `
+  /// ` By creating an account, you agree to our `
   String get makingAnAccount {
     return Intl.message(
-      ' By creating an account, ',
+      ' By creating an account, you agree to our ',
       name: 'makingAnAccount',
       desc: '',
       args: [],
     );
   }
 
-  /// `you agree to our Terms & Conditions`
+  /// `Terms & Conditions`
   String get termsAndConditions {
     return Intl.message(
-      'you agree to our Terms & Conditions',
+      'Terms & Conditions',
       name: 'termsAndConditions',
       desc: '',
       args: [],

@@ -13,14 +13,15 @@
   "password": "Password",
   "forgotPassword": "Forgot Password?",
   "loginButton": "Login",
-  "noAccount": "Don't have an account?",
+  "noAccount": "Don't have an account? ",
   "signUp": "Sign Up",
   "or": "OR",
   "loginWithGoogle": "Login with Google",
   "loginWithFacebook": "Login with Facebook",
   "loginWithApple": "Login with Apple",
   "confirmPassword": "Confirm Password",
-  "haveAccount": "Already have an account?",
-  "makingAnAccount":" By creating an account, ",
-  "termsAndConditions": "you agree to our Terms & Conditions"
+  "fullName": "Full Name",
+  "haveAccount": "Already have an account? ",
+  "makingAnAccount":" By creating an account, you agree to our ",
+  "termsAndConditions": "Terms & Conditions"
 }

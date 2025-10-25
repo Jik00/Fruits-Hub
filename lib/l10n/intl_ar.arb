@@ -13,14 +13,15 @@
     "password": "كلمة المرور",
     "forgotPassword": "هل نسيت كلمة المرور؟",
     "loginButton": "تسجيل الدخول",
-    "noAccount": "ليس لديك حساب؟",
+    "noAccount": " ليس لديك حساب؟",
     "signUp": "إنشاء حساب",
     "or": "أو",
     "loginWithGoogle": "تسجيل الدخول باستخدام جوجل",
     "loginWithFacebook": "تسجيل الدخول باستخدام فيسبوك",
     "loginWithApple": "تسجيل الدخول باستخدام أبل",
     "confirmPassword": "تأكيد كلمة المرور",
-    "haveAccount": "هل لديك حساب؟",
-    "makingAnAccount":" من خلال إنشاء حساب،",
-    "termsAndConditions": "فإنك توافق على الشروط والأحكام الخاصة بنا"
+    "fullName": "الاسم الكامل",
+    "haveAccount": " هل لديك حساب؟",
+    "makingAnAccount":" من خلال إنشاء حساب، فإنك توافق على ",
+    "termsAndConditions": "الشروط والأحكام الخاصة بنا"
 }

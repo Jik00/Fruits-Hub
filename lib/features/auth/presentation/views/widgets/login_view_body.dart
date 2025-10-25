@@ -5,6 +5,7 @@ import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/core/utils/context_extensions.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/custom_form_textfield.dart';
+import 'package:fruits_hub/features/auth/presentation/views/signup_view.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/login_with_listtile.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/no_account_widget.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/or_divider.dart';
@@ -27,7 +28,8 @@ class LoginViewBody extends StatelessWidget {
             CustomFormTextfield(
               textInputType: TextInputType.visiblePassword,
               hintText: context.loc.password,
-              suffixIcon: const Icon(Icons.remove_red_eye),
+              suffixIcon: Icon(Icons.remove_red_eye,
+                  color: AppColors.grayscale400.withOpacity(0.7)),
             ),
             SizedBox(height: 16.h),
             Row(
@@ -46,7 +48,13 @@ class LoginViewBody extends StatelessWidget {
             SizedBox(height: 33.h),
             CustomButton(hint: context.loc.loginTitle, onTap: () {}),
             SizedBox(height: 33.h),
-            const NoAccountWidget(),
+            NoAccountWidget(
+              text1: context.loc.noAccount,
+              text2: context.loc.signUp,
+              onTap: () {
+                Navigator.pushNamed(context, SignupView.routeName);
+              },
+            ),
             SizedBox(height: 33.h),
             const OrDivider(),
             SizedBox(height: 21.h),

@@ -29,7 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgotPassword": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
     ),
-    "haveAccount": MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
+    "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
+    "haveAccount": MessageLookupByLibrary.simpleMessage(" هل لديك حساب؟"),
     "loginButton": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginTitle": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginWithApple": MessageLookupByLibrary.simpleMessage(
@@ -42,9 +43,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تسجيل الدخول باستخدام جوجل",
     ),
     "makingAnAccount": MessageLookupByLibrary.simpleMessage(
-      " من خلال إنشاء حساب،",
+      " من خلال إنشاء حساب، فإنك توافق على ",
     ),
-    "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+    "noAccount": MessageLookupByLibrary.simpleMessage(" ليس لديك حساب؟"),
     "onboardingSkip": MessageLookupByLibrary.simpleMessage("تخط"),
     "onboardingSubTitleItem1": MessageLookupByLibrary.simpleMessage(
       "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة.",
@@ -63,7 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "startNowButton": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
-      "فإنك توافق على الشروط والأحكام الخاصة بنا",
+      "الشروط والأحكام الخاصة بنا",
     ),
   };
 }

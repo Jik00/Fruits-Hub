@@ -2,19 +2,23 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
-import 'package:fruits_hub/core/utils/context_extensions.dart';
 
 class NoAccountWidget extends StatelessWidget {
   const NoAccountWidget({
     super.key,
+    required this.text1,
+    required this.text2, this.onTap,
   });
+
+  final String text1, text2;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Text.rich(
       TextSpan(children: [
         TextSpan(
-          text: context.loc.noAccount,
+          text: text1,
           style: TextStyle(
             fontSize: 16.sp,
             fontWeight: FontWeight.w600,
@@ -22,8 +26,9 @@ class NoAccountWidget extends StatelessWidget {
           ),
         ),
         TextSpan(
-          text: ' ${context.loc.signUp}',
-          recognizer: TapGestureRecognizer()..onTap = () {},
+          text: text2,
+          recognizer: TapGestureRecognizer()
+            ..onTap = onTap,
           style: TextStyle(
             fontSize: 16.sp,
             fontWeight: FontWeight.w600,

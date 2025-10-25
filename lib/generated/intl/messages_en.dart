@@ -25,8 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
     "email": MessageLookupByLibrary.simpleMessage("E-mail"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+    "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "haveAccount": MessageLookupByLibrary.simpleMessage(
-      "Already have an account?",
+      "Already have an account? ",
     ),
     "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
     "loginTitle": MessageLookupByLibrary.simpleMessage("login"),
@@ -38,10 +39,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Login with Google",
     ),
     "makingAnAccount": MessageLookupByLibrary.simpleMessage(
-      " By creating an account, ",
+      " By creating an account, you agree to our ",
     ),
     "noAccount": MessageLookupByLibrary.simpleMessage(
-      "Don\'t have an account?",
+      "Don\'t have an account? ",
     ),
     "onboardingSkip": MessageLookupByLibrary.simpleMessage("Skip"),
     "onboardingSubTitleItem1": MessageLookupByLibrary.simpleMessage(
@@ -63,7 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "startNowButton": MessageLookupByLibrary.simpleMessage("Start Now"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
-      "you agree to our Terms & Conditions",
+      "Terms & Conditions",
     ),
   };
 }
