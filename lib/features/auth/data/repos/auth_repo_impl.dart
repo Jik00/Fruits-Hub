@@ -7,11 +7,15 @@ import 'package:fruits_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:fruits_hub/features/auth/domain/repos/auth_repo.dart';
 
 class AuthRepoImpl extends AuthRepo {
+  final FirebaseAuthService firebaseAuthService;
+
+  AuthRepoImpl({required this.firebaseAuthService});
+
   @override
   Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(
       String email, String password, String username) async {
     try {
-      var user = await FirebaseAuthService()
+      var user = await firebaseAuthService
           .createUserWithEmailAndPassword(email: email, password: password);
 
       return Right(UserModel.fromFirebaseUser(user));
