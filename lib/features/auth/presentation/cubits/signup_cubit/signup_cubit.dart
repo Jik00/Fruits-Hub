@@ -6,7 +6,7 @@ import 'package:meta/meta.dart';
 part 'signup_state.dart';
 
 class SignupCubit extends Cubit<SignupState> {
-  SignupCubit(this.authRepo) : super(SignupInitial());
+SignupCubit({required this.authRepo}) : super(SignupInitial());
 
   final AuthRepo authRepo;
 
