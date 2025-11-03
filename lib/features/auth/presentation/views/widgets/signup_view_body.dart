@@ -60,8 +60,8 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  context.read()<SignupCubit>().signUp(
-                        name: name, email: email, password: password);
+                  context.read<SignupCubit>().createUserWithEmailAndPassword(
+                        username: name, email: email, password: password);
                 } else {
                   setState(() {
                     autovalidateMode = AutovalidateMode.always; 

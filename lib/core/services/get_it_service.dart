@@ -5,11 +5,11 @@ import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
 
-Future<void> setupGetIt() async {
+void setupGetIt() async {
   
-  getIt.registerLazySingleton<FirebaseAuthService>(() => FirebaseAuthService());
+  getIt.registerSingleton<FirebaseAuthService>( FirebaseAuthService());
 
-  getIt.registerLazySingleton<AuthRepo>(
-    () => AuthRepoImpl(firebaseAuthService: getIt<FirebaseAuthService>()),
+  getIt.registerSingleton<AuthRepo>(
+    AuthRepoImpl(firebaseAuthService: getIt<FirebaseAuthService>()),
   );
 }
