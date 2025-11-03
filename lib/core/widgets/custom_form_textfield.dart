@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
+import 'package:fruits_hub/core/utils/context_extensions.dart';
 
 class CustomFormTextfield extends StatelessWidget {
   const CustomFormTextfield(
@@ -20,7 +21,7 @@ class CustomFormTextfield extends StatelessWidget {
       onSaved: onSaved,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'This field is required';
+          return context.loc.requiredField;
         }
         return null;
       },

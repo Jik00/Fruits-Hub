@@ -23,5 +23,6 @@
     "fullName": "الاسم الكامل",
     "haveAccount": " هل لديك حساب؟",
     "makingAnAccount":" من خلال إنشاء حساب، فإنك توافق على ",
-    "termsAndConditions": "الشروط والأحكام الخاصة بنا"
+    "termsAndConditions": "الشروط والأحكام الخاصة بنا",
+    "requiredField": "هذا الحقل مطلوب"
 }

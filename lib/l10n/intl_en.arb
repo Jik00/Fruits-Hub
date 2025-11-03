@@ -23,5 +23,6 @@
   "fullName": "Full Name",
   "haveAccount": "Already have an account? ",
   "makingAnAccount":" By creating an account, you agree to our ",
-  "termsAndConditions": "Terms & Conditions"
+  "termsAndConditions": "Terms & Conditions",
+  "requiredField": "This field is required"
 }

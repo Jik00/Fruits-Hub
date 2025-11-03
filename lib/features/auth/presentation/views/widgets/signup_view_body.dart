@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/context_extensions.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/custom_form_textfield.dart';
+import 'package:fruits_hub/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/no_account_widget.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/signup_terms_checkbox.dart';
 
@@ -14,8 +16,9 @@ class SignupViewBody extends StatefulWidget {
   State<SignupViewBody> createState() => _SignupViewBodyState();
 }
 
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   late String name, email, password;
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 class _SignupViewBodyState extends State<SignupViewBody> {
   @override
   Widget build(BuildContext context) {
@@ -53,7 +56,18 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               SizedBox(height: 16.h),
               const SignupTermsCheckbox(),
               SizedBox(height: 33.h),
-              CustomButton(hint: context.loc.signUp, onTap: () {}),
+              CustomButton(hint: context.loc.signUp, onTap: () {
+                
+                if (_formKey.currentState!.validate()) {
+                  _formKey.currentState!.save();
+                  context.read()<SignupCubit>().signUp(
+                        name: name, email: email, password: password);
+                } else {
+                  setState(() {
+                    autovalidateMode = AutovalidateMode.always; 
+                  });
+                }
+              }),
               SizedBox(height: 33.h),
               NoAccountWidget(
                 text1: context.loc.haveAccount,

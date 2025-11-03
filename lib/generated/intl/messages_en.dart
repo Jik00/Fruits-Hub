@@ -61,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "or": MessageLookupByLibrary.simpleMessage("OR"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "requiredField": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "startNowButton": MessageLookupByLibrary.simpleMessage("Start Now"),
     "termsAndConditions": MessageLookupByLibrary.simpleMessage(
