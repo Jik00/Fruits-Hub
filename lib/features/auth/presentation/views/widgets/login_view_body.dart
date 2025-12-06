@@ -11,70 +11,95 @@ import 'package:fruits_hub/features/auth/presentation/views/widgets/login_with_l
 import 'package:fruits_hub/features/auth/presentation/views/widgets/no_account_widget.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/or_divider.dart';
 
-class LoginViewBody extends StatelessWidget {
+class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
 
+  @override
+  State<LoginViewBody> createState() => _LoginViewBodyState();
+}
+
+final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
+late String email, password;
+class _LoginViewBodyState extends State<LoginViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 17.w),
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: 24.h),
-            CustomFormTextfield(
-                textInputType: TextInputType.emailAddress,
-                hintText: context.loc.email),
-            SizedBox(height: 16.h),
-            PasswordField(
-              onSaved: (value) {},
-            ),
-            SizedBox(height: 16.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  context.loc.forgotPassword,
-                  style: TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.lightPrimaryColor,
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              SizedBox(height: 24.h),
+              CustomFormTextfield(
+                  textInputType: TextInputType.emailAddress,
+                  hintText: context.loc.email,
+                  onSaved: (value) {
+                    email = value!;
+                  }),
+              SizedBox(height: 16.h),
+              PasswordField(
+                onSaved: (value) {
+                  password = value!;
+                },
+              ),
+              SizedBox(height: 16.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    context.loc.forgotPassword,
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.lightPrimaryColor,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(height: 33.h),
-            CustomButton(hint: context.loc.loginTitle, onTap: () {}),
-            SizedBox(height: 33.h),
-            NoAccountWidget(
-              text1: context.loc.noAccount,
-              text2: context.loc.signUp,
-              onTap: () {
-                Navigator.pushNamed(context, SignupView.routeName);
-              },
-            ),
-            SizedBox(height: 33.h),
-            const OrDivider(),
-            SizedBox(height: 21.h),
-            LoginWithListtile(
-              title: context.loc.loginWithGoogle,
-              icon: Assets.assetsImagesGoogleIcons,
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            LoginWithListtile(
-              title: context.loc.loginWithApple,
-              icon: Assets.assetsImagesAppleCons,
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            LoginWithListtile(
-              title: context.loc.loginWithFacebook,
-              icon: Assets.assetsImagesFacebookIcons,
-            ),
-          ],
+                ],
+              ),
+              SizedBox(height: 33.h),
+              CustomButton(hint: context.loc.loginTitle, onTap: () {
+                if (_formKey.currentState!.validate()) {
+                  _formKey.currentState!.save();
+                } else {
+                  setState(() {
+                    autovalidateMode = AutovalidateMode.always;
+                  });
+                }
+              },),
+              SizedBox(height: 33.h),
+              NoAccountWidget(
+                text1: context.loc.noAccount,
+                text2: context.loc.signUp,
+                onTap: () {
+                  Navigator.pushNamed(context, SignupView.routeName);
+                },
+              ),
+              SizedBox(height: 33.h),
+              const OrDivider(),
+              SizedBox(height: 21.h),
+              LoginWithListtile(
+                title: context.loc.loginWithGoogle,
+                icon: Assets.assetsImagesGoogleIcons,
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              LoginWithListtile(
+                title: context.loc.loginWithApple,
+                icon: Assets.assetsImagesAppleCons,
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              LoginWithListtile(
+                title: context.loc.loginWithFacebook,
+                icon: Assets.assetsImagesFacebookIcons,
+              ),
+            ],
+          ),
         ),
       ),
     );
