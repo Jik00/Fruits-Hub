@@ -5,7 +5,7 @@ import 'package:fruits_hub/features/auth/presentation/cubits/signup_cubit/signup
 import 'package:fruits_hub/features/auth/presentation/views/widgets/signup_view_body.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-import '../../../../../core/helper_functions/build_error_bar.dart';
+import '../../../../../core/helper_functions/build_error_snack_bar.dart';
 
 class SignUpViewBodyBlocConsumer extends StatelessWidget {
   const SignUpViewBodyBlocConsumer({
@@ -18,7 +18,7 @@ class SignUpViewBodyBlocConsumer extends StatelessWidget {
       listener: (context, state) {
         if (state is SignupSuccess) {}
         if (state is SignupFailure) {
-          buildErrorBar(context, state.message);
+          buildErrorSnackBar(context, state.message);
         }
       },
       builder: (context, state) {

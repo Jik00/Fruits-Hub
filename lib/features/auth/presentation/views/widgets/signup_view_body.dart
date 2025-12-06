@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruits_hub/core/helper_functions/build_error_bar.dart';
+import 'package:fruits_hub/core/helper_functions/build_error_snack_bar.dart';
 import 'package:fruits_hub/core/utils/context_extensions.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/custom_form_textfield.dart';
@@ -68,7 +68,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                           .createUserWithEmailAndPassword(
                               username: name, email: email, password: password);
                     } else {
-                      buildErrorBar(context, context.loc.acceptTerms);
+                      buildErrorSnackBar(context, context.loc.acceptTerms);
                     }
                   } else {
                     setState(() {
