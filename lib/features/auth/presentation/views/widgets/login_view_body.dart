@@ -5,6 +5,7 @@ import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/core/utils/context_extensions.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/custom_form_textfield.dart';
+import 'package:fruits_hub/core/widgets/password_field.dart';
 import 'package:fruits_hub/features/auth/presentation/views/signup_view.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/login_with_listtile.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/no_account_widget.dart';
@@ -25,11 +26,8 @@ class LoginViewBody extends StatelessWidget {
                 textInputType: TextInputType.emailAddress,
                 hintText: context.loc.email),
             SizedBox(height: 16.h),
-            CustomFormTextfield(
-              textInputType: TextInputType.visiblePassword,
-              hintText: context.loc.password,
-              suffixIcon: Icon(Icons.remove_red_eye,
-                  color: AppColors.grayscale400.withOpacity(0.7)),
+            PasswordField(
+              onSaved: (value) {},
             ),
             SizedBox(height: 16.h),
             Row(

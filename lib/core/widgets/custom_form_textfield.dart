@@ -8,16 +8,20 @@ class CustomFormTextfield extends StatelessWidget {
       {super.key,
       required this.textInputType,
       required this.hintText,
-      this.suffixIcon, this.onSaved});
+      this.suffixIcon,
+      this.onSaved,
+      this.obscure = false});
 
   final TextInputType textInputType;
   final String hintText;
   final Widget? suffixIcon;
   final void Function(String?)? onSaved;
+  final bool obscure;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscure,
       onSaved: onSaved,
       validator: (value) {
         if (value == null || value.isEmpty) {
@@ -34,7 +38,7 @@ class CustomFormTextfield extends StatelessWidget {
           fontWeight: FontWeight.w700,
         ),
         suffixIcon: Padding(
-          padding: EdgeInsets.only(left: 18.w),
+          padding: EdgeInsets.only(left: 10.w),
           child: suffixIcon,
         ),
         filled: true,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/context_extensions.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/custom_form_textfield.dart';
+import 'package:fruits_hub/core/widgets/password_field.dart';
 import 'package:fruits_hub/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/no_account_widget.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/signup_terms_checkbox.dart';
@@ -16,9 +16,10 @@ class SignupViewBody extends StatefulWidget {
   State<SignupViewBody> createState() => _SignupViewBodyState();
 }
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  late String name, email, password;
-  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+late String name, email, password;
+AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
 class _SignupViewBodyState extends State<SignupViewBody> {
   @override
   Widget build(BuildContext context) {
@@ -39,35 +40,34 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               SizedBox(height: 16.h),
               CustomFormTextfield(
                   textInputType: TextInputType.emailAddress,
-                  hintText: context.loc.email, 
+                  hintText: context.loc.email,
                   onSaved: (value) {
                     email = value!;
                   }),
               SizedBox(height: 16.h),
-              CustomFormTextfield(
-                textInputType: TextInputType.visiblePassword,
-                hintText: context.loc.password,
+              PasswordField(
                 onSaved: (value) {
                   password = value!;
                 },
-                suffixIcon: Icon(Icons.remove_red_eye,
-                    color: AppColors.grayscale400.withOpacity(0.7)),
               ),
               SizedBox(height: 16.h),
               const SignupTermsCheckbox(),
               SizedBox(height: 33.h),
-              CustomButton(hint: context.loc.signUp, onTap: () {
-                
-                if (_formKey.currentState!.validate()) {
-                  _formKey.currentState!.save();
-                  context.read<SignupCubit>().createUserWithEmailAndPassword(
-                        username: name, email: email, password: password);
-                } else {
-                  setState(() {
-                    autovalidateMode = AutovalidateMode.always; 
-                  });
-                }
-              }),
+              CustomButton(
+                  hint: context.loc.signUp,
+                  onTap: () {
+                    if (_formKey.currentState!.validate()) {
+                      _formKey.currentState!.save();
+                      context
+                          .read<SignupCubit>()
+                          .createUserWithEmailAndPassword(
+                              username: name, email: email, password: password);
+                    } else {
+                      setState(() {
+                        autovalidateMode = AutovalidateMode.always;
+                      });
+                    }
+                  }),
               SizedBox(height: 33.h),
               NoAccountWidget(
                 text1: context.loc.haveAccount,
