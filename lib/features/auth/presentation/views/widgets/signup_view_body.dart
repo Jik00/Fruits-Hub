@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruits_hub/core/helper_functions/build_error_bar.dart';
 import 'package:fruits_hub/core/utils/context_extensions.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/custom_form_textfield.dart';
@@ -18,6 +19,7 @@ class SignupViewBody extends StatefulWidget {
 
 final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 late String name, email, password;
+bool isChecked = false;
 AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
 class _SignupViewBodyState extends State<SignupViewBody> {
@@ -51,23 +53,30 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 },
               ),
               SizedBox(height: 16.h),
-              const SignupTermsCheckbox(),
+              SignupTermsCheckbox(onTermsChanged: (value) {
+                isChecked = value;
+              }),
               SizedBox(height: 33.h),
               CustomButton(
-                  hint: context.loc.signUp,
-                  onTap: () {
-                    if (_formKey.currentState!.validate()) {
+                hint: context.loc.signUp,
+                onTap: () {
+                  if (_formKey.currentState!.validate()) {
+                    if (isChecked) {
                       _formKey.currentState!.save();
                       context
                           .read<SignupCubit>()
                           .createUserWithEmailAndPassword(
                               username: name, email: email, password: password);
                     } else {
-                      setState(() {
-                        autovalidateMode = AutovalidateMode.always;
-                      });
+                      buildErrorBar(context, context.loc.acceptTerms);
                     }
-                  }),
+                  } else {
+                    setState(() {
+                      autovalidateMode = AutovalidateMode.always;
+                    });
+                  }
+                },
+              ),
               SizedBox(height: 33.h),
               NoAccountWidget(
                 text1: context.loc.haveAccount,

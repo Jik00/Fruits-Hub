@@ -4,7 +4,9 @@ import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/context_extensions.dart';
 
 class SignupTermsCheckbox extends StatefulWidget {
-  const SignupTermsCheckbox({super.key});
+  const SignupTermsCheckbox({super.key, required this.onTermsChanged});
+
+  final ValueChanged<bool> onTermsChanged;
 
   @override
   State<SignupTermsCheckbox> createState() => _SignupTermsCheckboxState();
@@ -26,6 +28,7 @@ class _SignupTermsCheckboxState extends State<SignupTermsCheckbox> {
               onChanged: (value) {
                 setState(() {
                   isChecked = value!;
+                  widget.onTermsChanged(isChecked);
                 });
               },
               shape: RoundedRectangleBorder(
