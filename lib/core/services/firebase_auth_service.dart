@@ -1,5 +1,7 @@
+import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fruits_hub/core/errors/cutoms_exception.dart';
+import '../helper_functions/signup_errors_message.dart';
 
 class FirebaseAuthService {
   Future<User> createUserWithEmailAndPassword(
@@ -12,14 +14,11 @@ class FirebaseAuthService {
       );
       return credential.user!;
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        throw CustomException('كلمة المرور التي تم إدخالها ضعيفة جدًا.');
-      } else if (e.code == 'email-already-in-use') {
-        throw CustomException('يوجد حساب بالفعل بهذا البريد الإلكتروني.');
-      }
+      log(' Error in FirebaseAuthService.createUserWithEmailAndPassword : ${e.code}');
+      throw handleSignUpErrorMessage(e.code);
     } catch (e) {
-      throw CustomException("فشل في انشاء الحساب : $e" );
+      log(' Error in FirebaseAuthService.createUserWithEmailAndPassword : ${e.toString()}');
+      throw CustomException('فشل في انشاء الحساب.');
     }
-    return Future.error("فشل في انشاء الحساب.");
   }
 }
