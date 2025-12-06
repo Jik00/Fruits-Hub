@@ -8,4 +8,5 @@ abstract class AppColors {
   static const amber = Color(0xFFF4A91F);
   static const textFieldFillColor = Color(0xFFF9FAFA);
   static const textFieldBorderColor = Color(0xFFE6E9EA);
+  static const darkRedForErrorcolor = Color(0xFF7D0A0A);
 }

@@ -24,5 +24,6 @@
     "haveAccount": "هل لديك حساب؟ ",
     "makingAnAccount":" من خلال إنشاء حساب، فإنك توافق على ",
     "termsAndConditions": "الشروط والأحكام الخاصة بنا",
-    "requiredField": "هذا الحقل مطلوب"
+    "requiredField": "هذا الحقل مطلوب",
+    "acceptTerms": "يجب عليك قبول الشروط والأحكام لانشاء حساب"
 }

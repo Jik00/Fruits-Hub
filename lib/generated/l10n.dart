@@ -264,6 +264,16 @@ class S {
       args: [],
     );
   }
+
+  /// `You must accept the terms and conditions to create an account`
+  String get acceptTerms {
+    return Intl.message(
+      'You must accept the terms and conditions to create an account',
+      name: 'acceptTerms',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
