@@ -21,4 +21,21 @@ class FirebaseAuthService {
       throw CustomException('فشل في انشاء الحساب.');
     }
   }
+
+  Future<User> signInWithEmailAndPassword({required String email, required String password}) async {
+    try {
+      final credential =
+          await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return credential.user!;
+    } on FirebaseAuthException catch (e) {
+      log(' Error in FirebaseAuthService.signInWithEmailAndPassword : ${e.code}');
+      throw handleSignUpErrorMessage(e.code);
+    } catch (e) {
+      log(' Error in FirebaseAuthService.signInWithEmailAndPassword : ${e.toString()}');
+      throw CustomException('فشل في تسجيل الدخول.');
+    }
+  }
 }
