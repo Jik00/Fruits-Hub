@@ -3,8 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 
-class LoginWithListtile extends StatelessWidget {
-  const LoginWithListtile({super.key, required this.title, required this.icon});
+class SignInWithListtile extends StatelessWidget {
+  const SignInWithListtile(
+      {super.key, required this.title, required this.icon});
 
   final String title;
   final String icon;

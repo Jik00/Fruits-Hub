@@ -7,22 +7,23 @@ import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/custom_form_textfield.dart';
 import 'package:fruits_hub/core/widgets/password_field.dart';
 import 'package:fruits_hub/features/auth/presentation/views/signup_view.dart';
-import 'package:fruits_hub/features/auth/presentation/views/widgets/login_with_listtile.dart';
+import 'package:fruits_hub/features/auth/presentation/views/widgets/signin_with_listtile.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/no_account_widget.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/or_divider.dart';
 
-class LoginViewBody extends StatefulWidget {
-  const LoginViewBody({super.key});
+class SignInViewBody extends StatefulWidget {
+  const SignInViewBody({super.key});
 
   @override
-  State<LoginViewBody> createState() => _LoginViewBodyState();
+  State<SignInViewBody> createState() => _SignInViewBodyState();
 }
 
 final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
 late String email, password;
-class _LoginViewBodyState extends State<LoginViewBody> {
+
+class _SignInViewBodyState extends State<SignInViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -60,15 +61,18 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 ],
               ),
               SizedBox(height: 33.h),
-              CustomButton(hint: context.loc.loginTitle, onTap: () {
-                if (_formKey.currentState!.validate()) {
-                  _formKey.currentState!.save();
-                } else {
-                  setState(() {
-                    autovalidateMode = AutovalidateMode.always;
-                  });
-                }
-              },),
+              CustomButton(
+                hint: context.loc.loginTitle,
+                onTap: () {
+                  if (_formKey.currentState!.validate()) {
+                    _formKey.currentState!.save();
+                  } else {
+                    setState(() {
+                      autovalidateMode = AutovalidateMode.always;
+                    });
+                  }
+                },
+              ),
               SizedBox(height: 33.h),
               NoAccountWidget(
                 text1: context.loc.noAccount,
@@ -80,21 +84,21 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               SizedBox(height: 33.h),
               const OrDivider(),
               SizedBox(height: 21.h),
-              LoginWithListtile(
+              SignInWithListtile(
                 title: context.loc.loginWithGoogle,
                 icon: Assets.assetsImagesGoogleIcons,
               ),
               SizedBox(
                 height: 16.h,
               ),
-              LoginWithListtile(
+              SignInWithListtile(
                 title: context.loc.loginWithApple,
                 icon: Assets.assetsImagesAppleCons,
               ),
               SizedBox(
                 height: 16.h,
               ),
-              LoginWithListtile(
+              SignInWithListtile(
                 title: context.loc.loginWithFacebook,
                 icon: Assets.assetsImagesFacebookIcons,
               ),

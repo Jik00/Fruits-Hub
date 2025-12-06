@@ -1,6 +1,6 @@
 import 'package:fruits_hub/core/errors/cutoms_exception.dart';
 
-CustomException handleSignUpErrorMessage(String code) {
+CustomException handleAuthErrorMessage(String code) {
   switch (code) {
     case 'weak-password':
       return CustomException('كلمة المرور التي تم إدخالها ضعيفة جدًا.');
@@ -13,6 +13,12 @@ CustomException handleSignUpErrorMessage(String code) {
 
     case 'invalid-email':
       return CustomException('البريد الإلكتروني غير صحيح.');
+
+    case 'user-not-found':
+      return CustomException('لا يوجد حساب بهذا البريد الإلكتروني.');
+
+    case 'wrong-password':
+      return CustomException('البريد الإلكتروني أو كلمة المرور غير صحيحة.');
 
     default:
       return CustomException('فشل في انشاء الحساب.');
