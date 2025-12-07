@@ -99,16 +99,16 @@ class _SignInViewBodyState extends State<SignInViewBody> {
               SizedBox(
                 height: 16.h,
               ),
-              SignInWithListtile(
-                title: context.loc.loginWithApple,
-                icon: Assets.assetsImagesAppleCons,
-                onTap: () {
-                  // context.read<SignInCubit>().signInWithApple();
-                },
-              ),
-              SizedBox(
-                height: 16.h,
-              ),
+              // SignInWithListtile(
+              //   title: context.loc.loginWithApple,
+              //   icon: Assets.assetsImagesAppleCons,
+              //   onTap: () {
+              //     // context.read<SignInCubit>().signInWithApple();
+              //   },
+              // ),
+              // SizedBox(
+              //   height: 16.h,
+              // ),
               SignInWithListtile(
                 title: context.loc.loginWithFacebook,
                 icon: Assets.assetsImagesFacebookIcons,
