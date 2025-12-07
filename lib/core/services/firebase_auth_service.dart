@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fruits_hub/core/errors/cutoms_exception.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import '../helper_functions/auth_errors_message.dart';
 
 class FirebaseAuthService {
@@ -37,5 +38,23 @@ class FirebaseAuthService {
       log(' Error in FirebaseAuthService.signInWithEmailAndPassword : ${e.toString()}');
       throw CustomException('فشل في تسجيل الدخول.');
     }
+  }
+
+  Future<User> signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    // Once signed in, return the UserCredential
+    return (await FirebaseAuth.instance.signInWithCredential(credential)).user!;
   }
 }
