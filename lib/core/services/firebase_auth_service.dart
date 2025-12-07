@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fruits_hub/core/errors/cutoms_exception.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../helper_functions/auth_errors_message.dart';
@@ -57,4 +58,15 @@ class FirebaseAuthService {
     // Once signed in, return the UserCredential
     return (await FirebaseAuth.instance.signInWithCredential(credential)).user!;
   }
+
+  Future<UserCredential> signInWithFacebook() async {
+  // Trigger the sign-in flow
+  final LoginResult loginResult = await FacebookAuth.instance.login();
+
+  // Create a credential from the access token
+  final OAuthCredential facebookAuthCredential = FacebookAuthProvider.credential(loginResult.accessToken!.tokenString);
+
+  // Once signed in, return the UserCredential
+  return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
+}
 }

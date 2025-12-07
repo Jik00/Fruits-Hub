@@ -113,7 +113,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                 title: context.loc.loginWithFacebook,
                 icon: Assets.assetsImagesFacebookIcons,
                 onTap: () {
-                  // context.read<SignInCubit>().signInWithFacebook();
+                  context.read<SignInCubit>().signInWithFacebook();
                 },
               ),
             ],
