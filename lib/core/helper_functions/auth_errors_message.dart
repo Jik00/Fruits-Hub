@@ -14,6 +14,9 @@ CustomException handleAuthErrorMessage(String code) {
     case 'invalid-email':
       return CustomException('البريد الإلكتروني غير صحيح.');
 
+    case 'invalid-credential':
+      return CustomException('البريد الإلكتروني أو كلمة المرور غير صحيحة.');
+
     case 'user-not-found':
       return CustomException('لا يوجد حساب بهذا البريد الإلكتروني.');
 

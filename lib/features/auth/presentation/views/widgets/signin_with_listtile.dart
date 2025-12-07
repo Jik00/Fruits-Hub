@@ -5,11 +5,11 @@ import 'package:fruits_hub/core/utils/app_colors.dart';
 
 class SignInWithListtile extends StatelessWidget {
   const SignInWithListtile(
-      {super.key, required this.title, required this.icon});
+      {super.key, required this.title, required this.icon, required this.onTap});
 
   final String title;
   final String icon;
-
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,9 +26,7 @@ class SignInWithListtile extends StatelessWidget {
         title: Text(title,
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600)),
-        onTap: () {
-          // Handle login action
-        },
+        onTap:onTap,
       ),
     );
   }

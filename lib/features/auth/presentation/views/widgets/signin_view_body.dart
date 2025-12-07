@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
@@ -6,6 +7,7 @@ import 'package:fruits_hub/core/utils/context_extensions.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/custom_form_textfield.dart';
 import 'package:fruits_hub/core/widgets/password_field.dart';
+import 'package:fruits_hub/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/views/signup_view.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/signin_with_listtile.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/no_account_widget.dart';
@@ -66,6 +68,9 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                 onTap: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
+
+                    context.read<SignInCubit>().signInWithEmailAndPassword(
+                        email: email, password: password);
                   } else {
                     setState(() {
                       autovalidateMode = AutovalidateMode.always;
@@ -87,6 +92,9 @@ class _SignInViewBodyState extends State<SignInViewBody> {
               SignInWithListtile(
                 title: context.loc.loginWithGoogle,
                 icon: Assets.assetsImagesGoogleIcons,
+                onTap: () {
+                  context.read<SignInCubit>().signInWithGoogle();
+                },
               ),
               SizedBox(
                 height: 16.h,
@@ -94,6 +102,9 @@ class _SignInViewBodyState extends State<SignInViewBody> {
               SignInWithListtile(
                 title: context.loc.loginWithApple,
                 icon: Assets.assetsImagesAppleCons,
+                onTap: () {
+                  // context.read<SignInCubit>().signInWithApple();
+                },
               ),
               SizedBox(
                 height: 16.h,
@@ -101,6 +112,9 @@ class _SignInViewBodyState extends State<SignInViewBody> {
               SignInWithListtile(
                 title: context.loc.loginWithFacebook,
                 icon: Assets.assetsImagesFacebookIcons,
+                onTap: () {
+                  // context.read<SignInCubit>().signInWithFacebook();
+                },
               ),
             ],
           ),
