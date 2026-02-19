@@ -1,4 +1,5 @@
 import 'package:fruits_hub/core/services/firebase_auth_service.dart';
+import 'package:fruits_hub/core/services/supabase_auth_service.dart';
 import 'package:fruits_hub/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:fruits_hub/features/auth/domain/repos/auth_repo.dart';
 import 'package:get_it/get_it.dart';
@@ -10,8 +11,9 @@ final supabase = Supabase.instance.client;
 void setupGetIt() async {
   
   getIt.registerSingleton<FirebaseAuthService>( FirebaseAuthService());
+  getIt.registerSingleton<SupabaseAuthService>( SupabaseAuthService());
 
   getIt.registerSingleton<AuthRepo>(
-    AuthRepoImpl(firebaseAuthService: getIt<FirebaseAuthService>()),
+    AuthRepoImpl(firebaseAuthService: getIt<FirebaseAuthService>(), supabaseAuthService: getIt<SupabaseAuthService>()),
   );
 }
