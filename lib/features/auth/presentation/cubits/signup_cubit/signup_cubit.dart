@@ -6,7 +6,7 @@ import 'package:meta/meta.dart';
 part 'signup_state.dart';
 
 class SignupCubit extends Cubit<SignupState> {
-SignupCubit({required this.authRepo}) : super(SignupInitial());
+  SignupCubit({required this.authRepo}) : super(SignupInitial());
 
   final AuthRepo authRepo;
 
@@ -16,8 +16,8 @@ SignupCubit({required this.authRepo}) : super(SignupInitial());
       required String username}) async {
     emit(SignupLoading());
 
-    final result = await authRepo.createUserWithEmailAndPassword(
-        email, password, username);
+    final result =
+        await authRepo.createUserWithEmail(email, password, username);
 
     result.fold(
       (failure) => emit(SignupFailure(failure.message)),

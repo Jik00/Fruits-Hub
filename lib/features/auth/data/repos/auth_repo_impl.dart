@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/errors/cutoms_exception.dart';
 import 'package:fruits_hub/core/errors/failures.dart';
 import 'package:fruits_hub/core/services/firebase_auth_service.dart';
@@ -17,32 +18,24 @@ class AuthRepoImpl extends AuthRepo {
       {required this.supabaseAuthService, required this.firebaseAuthService});
 
   @override
-  Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(
+  Future<Either<Failure, UserEntity>> createUserWithEmail(
       String email, String password, String username) async {
     try {
-
-
       ////////////// firebase auth logic \\\\\\\\\\\\\\\\
       // var user = await firebaseAuthService.createUserWithEmailAndPassword(
       //     email: email, password: password);
       // return Right(UserModel.fromFirebaseUser(user));
 
-      final supaUser = await supabaseAuthService.signUpWithEmail(
-          email: email, password: password);
+      final user = await supabaseAuthService.signUpWithEmail(
+          email: email, password: password, username: username);
 
-      final user = UserModel(
-          email: email,
-          password: password,
-          username: username,
-          uId: supaUser.id,);
 
-      return Right(user);
+      return Right(UserModel.fromSupabaseUser(user));
 
-      
     } on CustomException catch (e) {
       return Left(ServerFailure(e.message));
     } catch (e) {
-      log('Error in AuthRepoImpl.createUserWithEmailAndPassword $e');
+      log('Error in AuthRepoImpl.createUserWithEmail: $e');
       return Left(
         ServerFailure('just in case we added more logic in the future'),
       );
@@ -53,10 +46,17 @@ class AuthRepoImpl extends AuthRepo {
   Future<Either<Failure, UserEntity>> signInWithEmailAndPassword(
       String email, String password) async {
     try {
-      var user = await firebaseAuthService.signInWithEmailAndPassword(
+      // var user = await firebaseAuthService.signInWithEmailAndPassword(
+      //     email: email, password: password);
+
+      // return Right(UserModel.fromFirebaseUser(user));
+
+      final user = await supabaseAuthService.signInWithEmail(
           email: email, password: password);
 
-      return Right(UserModel.fromFirebaseUser(user));
+      //log('User signed in with Supabase: $user');
+      return Right(UserModel.fromSupabaseUser(user)); 
+
     } on CustomException catch (e) {
       return Left(ServerFailure(e.message));
     } catch (e) {
